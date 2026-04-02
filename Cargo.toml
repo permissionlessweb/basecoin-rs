@@ -35,7 +35,7 @@ primitive-types    = { version = "0.13.1", default-features = false }
 ibc       = { path = "../ibc-rs/ibc", default-features = false, features = [ "serde" ] }
 ibc-query = { path = "../ibc-rs/ibc-query", default-features = false }
 ibc-proto = { git = "https://github.com/permissionlessweb/ibc-proto-rs", features = [ "transport" ] }
-ics23     = { git = "https://github.com/permissionlessweb/ics23", branch = "prost-14.1", "default-features" = false }
+ics23     = { git = "https://github.com/permissionlessweb/ics23", "default-features" = false }
 
 # tendermint dependencies
 tendermint       = { git = "https://github.com/permissionlessweb/tendermint-rs", default-features = false }
