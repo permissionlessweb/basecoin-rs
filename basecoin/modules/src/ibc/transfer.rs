@@ -61,7 +61,10 @@ where
             ACCOUNT_PREFIX,
             &cosmos_adr028_escrow_address(port_id, channel_id),
         )
-        .map_err(|_| TokenTransferError::FailedToParseAccount)?;
+        .map_err(|_| TokenTransferError::MissingDestinationChannel {
+            port_id: port_id.clone(),
+            channel_id: channel_id.clone(),
+        })?;
 
         Ok(account_id)
     }
@@ -244,7 +247,7 @@ where
         &mut self,
         packet: &Packet,
         _relayer: &Signer,
-    ) -> (ModuleExtras, Acknowledgement) {
+    ) -> (ModuleExtras, Option<Acknowledgement>) {
         on_recv_packet_execute(self, packet)
     }
 
@@ -363,6 +366,14 @@ where
     ) -> Result<(), HostError> {
         Ok(())
     }
+
+    fn sender_account(&self, sender: &Signer) -> Result<Self::AccountId, HostError> {
+        Ok(sender.clone())
+    }
+
+    fn receiver_account(&self, receiver: &Signer) -> Result<Self::AccountId, HostError> {
+        Ok(receiver.clone())
+    }
 }
 
 impl<BK> TokenTransferExecutionContext for IbcTransferModule<BK>
@@ -381,15 +392,16 @@ where
             .to_string()
             .parse()
             .map_err(|_| HostError::Other {
-                description: TokenTransferError::FailedToParseAccount.to_string(),
+                description: "Failed to parse account".into(),
             })?;
         let to = self
             .get_escrow_account(port_id, channel_id)
             .and_then(|account| {
-                account
-                    .to_string()
-                    .parse()
-                    .map_err(|_| TokenTransferError::FailedToParseAccount)
+                account.to_string().parse().map_err(|_| {
+                    TokenTransferError::Host(HostError::Other {
+                        description: "Failed to parse account".into(),
+                    })
+                })
             })
             .map_err(|e| HostError::Other {
                 description: e.to_string(),
@@ -412,10 +424,11 @@ where
         let from = self
             .get_escrow_account(port_id, channel_id)
             .and_then(|account| {
-                account
-                    .to_string()
-                    .parse()
-                    .map_err(|_| TokenTransferError::FailedToParseAccount)
+                account.to_string().parse().map_err(|_| {
+                    TokenTransferError::Host(HostError::Other {
+                        description: "Failed to parse account".into(),
+                    })
+                })
             })
             .map_err(|e| HostError::Other {
                 description: e.to_string(),
@@ -424,7 +437,7 @@ where
             .to_string()
             .parse()
             .map_err(|_| HostError::Other {
-                description: TokenTransferError::FailedToParseAccount.to_string(),
+                description: "Failed to parse account".into(),
             })?;
         let coins = vec![Coin {
             denom: Denom(coin.denom.to_string()),
@@ -440,7 +453,7 @@ where
         amt: &PrefixedCoin,
     ) -> Result<(), HostError> {
         let account = account.to_string().parse().map_err(|_| HostError::Other {
-            description: TokenTransferError::FailedToParseAccount.to_string(),
+            description: "Failed to parse account".into(),
         })?;
         let coins = vec![Coin {
             denom: Denom(amt.denom.to_string()),
@@ -457,7 +470,7 @@ where
         _memo: &Memo,
     ) -> Result<(), HostError> {
         let account = account.to_string().parse().map_err(|_| HostError::Other {
-            description: TokenTransferError::FailedToParseAccount.to_string(),
+            description: "Failed to parse account".into(),
         })?;
         let coins = vec![Coin {
             denom: Denom(amt.denom.to_string()),
