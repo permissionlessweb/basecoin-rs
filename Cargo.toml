@@ -16,17 +16,17 @@ authors      = [ "Informal Systems <hello@informal.systems>" ]
 [workspace.dependencies]
 # external dependencies
 base64             = { version = "0.22.1", default-features = false, features = [ "alloc" ] }
-cosmrs             = { git = "https://github.com/permissionlessweb/cosmos-rust" }
+cosmrs             = { path = "../cosmos-rust/cosmrs" }
 displaydoc         = { version = "0.2", default-features = false }
 derive_more        = { version = "1.0.0", default-features = false, features = [ "from", "into", "try_into", "display" ] }
 ed25519            = { version = "2.2.3", default-features = false }
-prost              = { version = "0.14", default-features = false }
+prost              = { version = "0.14.3", default-features = false }
 serde_derive       = { version = "1.0", default-features = false }
 serde              = "1.0"
 serde_json         = "1.0"
 sha2               = "0.10.8"
-tonic              = "0.14"
-tonic-reflection   = "0.14"
+tonic              = "0.14.5"
+tonic-reflection   = "0.14.5"
 tracing            = "0.1.40"
 tracing-subscriber = "0.3.18"
 primitive-types    = { version = "0.13.1", default-features = false }
@@ -34,19 +34,15 @@ primitive-types    = { version = "0.13.1", default-features = false }
 # ibc dependencies
 ibc       = { path = "../ibc-rs/ibc", default-features = false, features = [ "serde" ] }
 ibc-query = { path = "../ibc-rs/ibc-query", default-features = false }
-ibc-proto = { git = "https://github.com/permissionlessweb/ibc-proto-rs", features = [ "transport" ] }
-ics23     = { git = "https://github.com/permissionlessweb/ics23", "default-features" = false }
+ibc-proto = { path = "../ibc-proto-rs", default-features = false, features = [ "transport" ] }
+ics23     = { path = "../ics23/rust", default-features = false }
 
 # tendermint dependencies
-tendermint       = { git = "https://github.com/permissionlessweb/tendermint-rs", default-features = false }
-tendermint-abci  = { git = "https://github.com/permissionlessweb/tendermint-rs", default-features = false }
-tendermint-proto = { git = "https://github.com/permissionlessweb/tendermint-rs", default-features = false }
-tendermint-rpc   = { git = "https://github.com/permissionlessweb/tendermint-rs", default-features = false }
+tendermint       = { path = "../tendermint-rs/tendermint", default-features = false }
+tendermint-abci  = { path = "../tendermint-rs/abci", default-features = false }
+tendermint-proto = { path = "../tendermint-rs/proto", default-features = false }
+tendermint-rpc   = { path = "../tendermint-rs/rpc", default-features = false }
 
 # tower abci
 tower-abci = { path = "../tower-abci" }
 
-[patch.crates-io]
-#ibc       = { git = "https://github.com/cosmos/ibc-rs.git", rev = "81625d6" }
-#ibc-query = { git = "https://github.com/cosmos/ibc-rs.git", rev = "81625d6" }
-#tower-abci = { git = "https://github.com/permissionlesweb/tower-abci.git"}
