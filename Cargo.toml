@@ -33,16 +33,16 @@ primitive-types    = { version = "0.13.1", default-features = false }
 
 # ibc dependencies
 ibc = { git = "https://github.com/permissionlessweb/ibc-rs", branch = "main" }
-ibc-query = { path = "../ibc-rs/ibc-query", default-features = false }
+ibc-query = { git = "https://github.com/permissionlessweb/ibc-rs", branch = "main", default-features = false }
 ibc-proto = { git = "https://github.com/permissionlessweb/ibc-proto-rs", branch = "main" }
 ics23 = { git = "https://github.com/permissionlessweb/ics23", branch = "stable" }
 
 # tendermint dependencies
 tendermint = { git = "https://github.com/permissionlessweb/tendermint-rs", branch = "main" }
-tendermint-abci  = { path = "../tendermint-rs/abci", default-features = false }
+tendermint-abci  = { git = "https://github.com/permissionlessweb/tendermint-rs", branch = "main", default-features = false }
 tendermint-proto = { git = "https://github.com/permissionlessweb/tendermint-rs", branch = "main" }
 tendermint-rpc = { git = "https://github.com/permissionlessweb/tendermint-rs", branch = "main" }
 
 # tower abci
-tower-abci = { path = "../tower-abci" }
+tower-abci = { git = "https://github.com/permissionlessweb/tower-abci", branch = "main" }
 
