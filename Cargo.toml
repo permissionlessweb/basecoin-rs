@@ -16,7 +16,7 @@ authors      = [ "Informal Systems <hello@informal.systems>" ]
 [workspace.dependencies]
 # external dependencies
 base64             = { version = "0.22.1", default-features = false, features = [ "alloc" ] }
-cosmrs             = { path = "../cosmos-rust/cosmrs" }
+cosmrs = { git = "https://github.com/permissionlessweb/cosmos-rust", branch = "main" }
 displaydoc         = { version = "0.2", default-features = false }
 derive_more        = { version = "1.0.0", default-features = false, features = [ "from", "into", "try_into", "display" ] }
 ed25519            = { version = "2.2.3", default-features = false }
@@ -32,16 +32,16 @@ tracing-subscriber = "0.3.18"
 primitive-types    = { version = "0.13.1", default-features = false }
 
 # ibc dependencies
-ibc       = { path = "../ibc-rs/ibc", default-features = false, features = [ "serde" ] }
+ibc = { git = "https://github.com/permissionlessweb/ibc-rs", branch = "main" }
 ibc-query = { path = "../ibc-rs/ibc-query", default-features = false }
-ibc-proto = { path = "../ibc-proto-rs", default-features = false, features = [ "transport" ] }
-ics23     = { path = "../ics23/rust", default-features = false }
+ibc-proto = { git = "https://github.com/permissionlessweb/ibc-proto-rs", branch = "main" }
+ics23 = { git = "https://github.com/permissionlessweb/ics23", branch = "stable" }
 
 # tendermint dependencies
-tendermint       = { path = "../tendermint-rs/tendermint", default-features = false }
+tendermint = { git = "https://github.com/permissionlessweb/tendermint-rs", branch = "main" }
 tendermint-abci  = { path = "../tendermint-rs/abci", default-features = false }
-tendermint-proto = { path = "../tendermint-rs/proto", default-features = false }
-tendermint-rpc   = { path = "../tendermint-rs/rpc", default-features = false }
+tendermint-proto = { git = "https://github.com/permissionlessweb/tendermint-rs", branch = "main" }
+tendermint-rpc = { git = "https://github.com/permissionlessweb/tendermint-rs", branch = "main" }
 
 # tower abci
 tower-abci = { path = "../tower-abci" }
