@@ -34,7 +34,7 @@ tendermint-abci  = { workspace = true, optional = true }
 tendermint-proto = { workspace = true }
 
 # internal dependencies
-basecoin-store   = { path = "../store" }
+basecoin-store = { path = "../store" }
 basecoin-modules = { path = "../modules" }
 
 # tower abci

@@ -16,7 +16,7 @@ authors      = [ "Informal Systems <hello@informal.systems>" ]
 [workspace.dependencies]
 # external dependencies
 base64             = { version = "0.22.1", default-features = false, features = [ "alloc" ] }
-cosmrs = { git = "https://github.com/permissionlessweb/cosmos-rust", branch = "main" }
+cosmrs = { path = "../cosmos-rust/cosmrs" }
 displaydoc         = { version = "0.2", default-features = false }
 derive_more        = { version = "1.0.0", default-features = false, features = [ "from", "into", "try_into", "display" ] }
 ed25519            = { version = "2.2.3", default-features = false }
@@ -32,17 +32,17 @@ tracing-subscriber = "0.3.18"
 primitive-types    = { version = "0.13.1", default-features = false }
 
 # ibc dependencies
-ibc = { git = "https://github.com/permissionlessweb/ibc-rs", branch = "main" }
-ibc-query = { git = "https://github.com/permissionlessweb/ibc-rs", branch = "main", default-features = false }
-ibc-proto = { git = "https://github.com/permissionlessweb/ibc-proto-rs", branch = "main" }
-ics23 = { git = "https://github.com/permissionlessweb/ics23", branch = "stable" }
+ibc = { path = "../ibc-rs/ibc" }
+ibc-query = { path = "../ibc-rs/ibc-query" }
+ibc-proto = { path = "../ibc-proto-rs" }
+ics23 = { path = "../ics23/rust" }
 
 # tendermint dependencies
-tendermint = { git = "https://github.com/permissionlessweb/tendermint-rs", branch = "main" }
-tendermint-abci  = { git = "https://github.com/permissionlessweb/tendermint-rs", branch = "main", default-features = false }
-tendermint-proto = { git = "https://github.com/permissionlessweb/tendermint-rs", branch = "main" }
-tendermint-rpc = { git = "https://github.com/permissionlessweb/tendermint-rs", branch = "main" }
+tendermint = { path = "../tendermint-rs/tendermint" }
+tendermint-abci = { path = "../tendermint-rs/abci" }
+tendermint-proto = { path = "../tendermint-rs/proto" }
+tendermint-rpc = { path = "../tendermint-rs/rpc" }
 
 # tower abci
-tower-abci = { git = "https://github.com/permissionlessweb/tower-abci", branch = "main" }
+tower-abci = { path = "../tower-abci" }
 
