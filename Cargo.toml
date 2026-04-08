@@ -16,7 +16,7 @@ authors      = [ "Informal Systems <hello@informal.systems>" ]
 [workspace.dependencies]
 # external dependencies
 base64             = { version = "0.22.1", default-features = false, features = [ "alloc" ] }
-cosmrs = { path = "../cosmos-rust/cosmrs" }
+cosmrs = { git = "https://github.com/permissionlessweb/cosmos-rust", branch = "zk-mvp" }
 displaydoc         = { version = "0.2", default-features = false }
 derive_more        = { version = "1.0.0", default-features = false, features = [ "from", "into", "try_into", "display" ] }
 ed25519            = { version = "2.2.3", default-features = false }
@@ -32,17 +32,17 @@ tracing-subscriber = "0.3.18"
 primitive-types    = { version = "0.13.1", default-features = false }
 
 # ibc dependencies
-ibc = { path = "../ibc-rs/ibc" }
-ibc-query = { path = "../ibc-rs/ibc-query" }
-ibc-proto = { path = "../ibc-proto-rs" }
-ics23 = { path = "../ics23/rust" }
+ibc = { git = "https://github.com/permissionlessweb/ibc-rs", branch = "zk-mvp" }
+ibc-query = { git = "https://github.com/permissionlessweb/ibc-rs", branch = "zk-mvp" }
+ibc-proto = { git = "https://github.com/permissionlessweb/ibc-proto-rs", branch = "zk-mvp" }
+ics23 = { git = "https://github.com/permissionlessweb/ics23", branch = "zk-mvp" }
 
 # tendermint dependencies
-tendermint = { path = "../tendermint-rs/tendermint" }
-tendermint-abci = { path = "../tendermint-rs/abci" }
-tendermint-proto = { path = "../tendermint-rs/proto" }
-tendermint-rpc = { path = "../tendermint-rs/rpc" }
+tendermint = { git = "https://github.com/permissionlessweb/tendermint-rs", branch = "zk-mvp" }
+tendermint-abci = { git = "https://github.com/permissionlessweb/tendermint-rs", branch = "zk-mvp" }
+tendermint-proto = { git = "https://github.com/permissionlessweb/tendermint-rs", branch = "zk-mvp" }
+tendermint-rpc = { git = "https://github.com/permissionlessweb/tendermint-rs", branch = "zk-mvp" }
 
 # tower abci
-tower-abci = { path = "../tower-abci" }
+tower-abci = { git = "https://github.com/permissionlessweb/tower-abci", branch = "zk-mvp" }
 

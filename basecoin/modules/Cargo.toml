@@ -34,4 +34,4 @@ tendermint     = { workspace = true }
 tendermint-rpc = { workspace = true, features = [ "http-client" ] }
 
 # internal dependencies
-basecoin-store = { path = "../store" }
+basecoin-store = { git = "https://github.com/permissionlessweb/basecoin-rs", branch = "zk-mvp" }
