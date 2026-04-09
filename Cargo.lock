@@ -176,7 +176,7 @@ version = "0.2.0"
 dependencies = [
  "basecoin-app",
  "basecoin-modules",
- "basecoin-store",
+ "basecoin-store 0.2.0",
  "bech32",
  "bitcoin",
  "clap",
@@ -207,7 +207,7 @@ name = "basecoin-app"
 version = "0.2.0"
 dependencies = [
  "basecoin-modules",
- "basecoin-store",
+ "basecoin-store 0.2.0 (git+https://github.com/permissionlessweb/basecoin-rs?branch=zk-mvp)",
  "cosmrs",
  "ibc-proto",
  "prost",
@@ -226,7 +226,7 @@ name = "basecoin-modules"
 version = "0.2.0"
 dependencies = [
  "base64 0.22.1",
- "basecoin-store",
+ "basecoin-store 0.2.0 (git+https://github.com/permissionlessweb/basecoin-rs?branch=zk-mvp)",
  "cosmrs",
  "derive_more 1.0.0",
  "displaydoc",
@@ -254,6 +254,21 @@ dependencies = [
  "ics23",
  "prost",
  "rand",
+ "serde",
+ "serde_json",
+ "sha2 0.10.9",
+ "tendermint",
+ "tracing",
+]
+
+[[package]]
+name = "basecoin-store"
+version = "0.2.0"
+source = "git+https://github.com/permissionlessweb/basecoin-rs?branch=zk-mvp#098a34f603a68f14f637ce5ab475644291200d4b"
+dependencies = [
+ "displaydoc",
+ "ics23",
+ "prost",
  "serde",
  "serde_json",
  "sha2 0.10.9",
@@ -576,6 +591,7 @@ checksum = "773648b94d0e5d620f64f280777445740e61fe701025087ec8b57f45c791888b"
 [[package]]
 name = "cosmos-sdk-proto"
 version = "0.28.0"
+source = "git+https://github.com/permissionlessweb/cosmos-rust?branch=zk-mvp#f06b0cd8b4d6f71985203050124d3de89e427aca"
 dependencies = [
  "bytes",
  "http-body-util",
@@ -590,6 +606,7 @@ dependencies = [
 [[package]]
 name = "cosmrs"
 version = "0.23.0"
+source = "git+https://github.com/permissionlessweb/cosmos-rust?branch=zk-mvp#f06b0cd8b4d6f71985203050124d3de89e427aca"
 dependencies = [
  "bip32",
  "cosmos-sdk-proto",
@@ -1294,6 +1311,7 @@ dependencies = [
 [[package]]
 name = "ibc"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "ibc-apps",
  "ibc-clients",
@@ -1306,6 +1324,7 @@ dependencies = [
 [[package]]
 name = "ibc-app-nft-transfer"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "ibc-app-nft-transfer-types",
  "ibc-core",
@@ -1315,6 +1334,7 @@ dependencies = [
 [[package]]
 name = "ibc-app-nft-transfer-types"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "base64 0.22.1",
  "borsh",
@@ -1335,6 +1355,7 @@ dependencies = [
 [[package]]
 name = "ibc-app-transfer"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "ibc-app-transfer-types",
  "ibc-core",
@@ -1344,6 +1365,7 @@ dependencies = [
 [[package]]
 name = "ibc-app-transfer-types"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "borsh",
  "derive_more 1.0.0",
@@ -1361,6 +1383,7 @@ dependencies = [
 [[package]]
 name = "ibc-apps"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "ibc-app-nft-transfer",
  "ibc-app-transfer",
@@ -1369,6 +1392,7 @@ dependencies = [
 [[package]]
 name = "ibc-client-tendermint"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "derive_more 1.0.0",
  "ibc-client-tendermint-types",
@@ -1385,6 +1409,7 @@ dependencies = [
 [[package]]
 name = "ibc-client-tendermint-types"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "displaydoc",
  "ibc-core-client-types",
@@ -1401,6 +1426,7 @@ dependencies = [
 [[package]]
 name = "ibc-client-wasm-types"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "base64 0.22.1",
  "displaydoc",
@@ -1414,6 +1440,7 @@ dependencies = [
 [[package]]
 name = "ibc-clients"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "ibc-client-tendermint",
  "ibc-client-wasm-types",
@@ -1422,6 +1449,7 @@ dependencies = [
 [[package]]
 name = "ibc-core"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "ibc-core-channel",
  "ibc-core-client",
@@ -1437,6 +1465,7 @@ dependencies = [
 [[package]]
 name = "ibc-core-channel"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "ibc-core-channel-types",
  "ibc-core-client",
@@ -1451,6 +1480,7 @@ dependencies = [
 [[package]]
 name = "ibc-core-channel-types"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "borsh",
  "derive_more 1.0.0",
@@ -1473,6 +1503,7 @@ dependencies = [
 [[package]]
 name = "ibc-core-client"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "ibc-core-client-context",
  "ibc-core-client-types",
@@ -1485,6 +1516,7 @@ dependencies = [
 [[package]]
 name = "ibc-core-client-context"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "derive_more 1.0.0",
  "displaydoc",
@@ -1500,6 +1532,7 @@ dependencies = [
 [[package]]
 name = "ibc-core-client-types"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "borsh",
  "derive_more 1.0.0",
@@ -1519,6 +1552,7 @@ dependencies = [
 [[package]]
 name = "ibc-core-commitment-types"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "borsh",
  "derive_more 1.0.0",
@@ -1537,6 +1571,7 @@ dependencies = [
 [[package]]
 name = "ibc-core-connection"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "ibc-client-wasm-types",
  "ibc-core-client",
@@ -1550,6 +1585,7 @@ dependencies = [
 [[package]]
 name = "ibc-core-connection-types"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "borsh",
  "derive_more 1.0.0",
@@ -1570,6 +1606,7 @@ dependencies = [
 [[package]]
 name = "ibc-core-handler"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "ibc-core-channel",
  "ibc-core-client",
@@ -1584,6 +1621,7 @@ dependencies = [
 [[package]]
 name = "ibc-core-handler-types"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "borsh",
  "derive_more 1.0.0",
@@ -1607,6 +1645,7 @@ dependencies = [
 [[package]]
 name = "ibc-core-host"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "derive_more 1.0.0",
  "displaydoc",
@@ -1624,6 +1663,7 @@ dependencies = [
 [[package]]
 name = "ibc-core-host-cosmos"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "derive_more 1.0.0",
  "displaydoc",
@@ -1646,6 +1686,7 @@ dependencies = [
 [[package]]
 name = "ibc-core-host-types"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "base64 0.22.1",
  "borsh",
@@ -1662,6 +1703,7 @@ dependencies = [
 [[package]]
 name = "ibc-core-router"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "derive_more 1.0.0",
  "displaydoc",
@@ -1675,6 +1717,7 @@ dependencies = [
 [[package]]
 name = "ibc-core-router-types"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "borsh",
  "derive_more 1.0.0",
@@ -1693,6 +1736,7 @@ dependencies = [
 [[package]]
 name = "ibc-derive"
 version = "0.10.1"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1702,6 +1746,7 @@ dependencies = [
 [[package]]
 name = "ibc-primitives"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "borsh",
  "derive_more 1.0.0",
@@ -1718,6 +1763,7 @@ dependencies = [
 [[package]]
 name = "ibc-proto"
 version = "0.52.0"
+source = "git+https://github.com/permissionlessweb/ibc-proto-rs?branch=zk-mvp#dbef678730b1c920515c3728addcffc657c94b3d"
 dependencies = [
  "base64 0.22.1",
  "bytes",
@@ -1737,6 +1783,7 @@ dependencies = [
 [[package]]
 name = "ibc-query"
 version = "0.57.0"
+source = "git+https://github.com/permissionlessweb/ibc-rs?branch=zk-mvp#0f50609533c0b11ab759d4e0572ce0601a834da2"
 dependencies = [
  "displaydoc",
  "ibc",
@@ -1747,6 +1794,7 @@ dependencies = [
 [[package]]
 name = "ics23"
 version = "0.12.0"
+source = "git+https://github.com/permissionlessweb/ics23?branch=zk-mvp#383c266b855d0047c3235869a910a32908615237"
 dependencies = [
  "anyhow",
  "blake2",
@@ -1912,6 +1960,7 @@ dependencies = [
 [[package]]
 name = "informalsystems-pbjson"
 version = "0.7.0"
+source = "git+https://github.com/permissionlessweb/pbjson?branch=zk-mvp#7a48b871416034c16941259823f4a40d534355a5"
 dependencies = [
  "base64 0.21.7",
  "serde",
@@ -2948,6 +2997,7 @@ checksum = "55937e1799185b12863d447f42597ed69d9928686b8d88a1df17376a097d8369"
 [[package]]
 name = "tendermint"
 version = "0.40.4"
+source = "git+https://github.com/permissionlessweb/tendermint-rs?branch=zk-mvp#2d1e8ff25ec07e4badb732818c0bd7ff8526b511"
 dependencies = [
  "bytes",
  "digest 0.10.7",
@@ -2976,6 +3026,7 @@ dependencies = [
 [[package]]
 name = "tendermint-abci"
 version = "0.40.4"
+source = "git+https://github.com/permissionlessweb/tendermint-rs?branch=zk-mvp#2d1e8ff25ec07e4badb732818c0bd7ff8526b511"
 dependencies = [
  "bytes",
  "flex-error",
@@ -2987,6 +3038,7 @@ dependencies = [
 [[package]]
 name = "tendermint-config"
 version = "0.40.4"
+source = "git+https://github.com/permissionlessweb/tendermint-rs?branch=zk-mvp#2d1e8ff25ec07e4badb732818c0bd7ff8526b511"
 dependencies = [
  "flex-error",
  "serde",
@@ -2999,6 +3051,7 @@ dependencies = [
 [[package]]
 name = "tendermint-light-client-verifier"
 version = "0.40.4"
+source = "git+https://github.com/permissionlessweb/tendermint-rs?branch=zk-mvp#2d1e8ff25ec07e4badb732818c0bd7ff8526b511"
 dependencies = [
  "derive_more 0.99.20",
  "flex-error",
@@ -3010,6 +3063,7 @@ dependencies = [
 [[package]]
 name = "tendermint-proto"
 version = "0.40.4"
+source = "git+https://github.com/permissionlessweb/tendermint-rs?branch=zk-mvp#2d1e8ff25ec07e4badb732818c0bd7ff8526b511"
 dependencies = [
  "borsh",
  "bytes",
@@ -3027,6 +3081,7 @@ dependencies = [
 [[package]]
 name = "tendermint-rpc"
 version = "0.40.4"
+source = "git+https://github.com/permissionlessweb/tendermint-rs?branch=zk-mvp#2d1e8ff25ec07e4badb732818c0bd7ff8526b511"
 dependencies = [
  "async-trait",
  "bytes",
@@ -3170,9 +3225,9 @@ checksum = "1f3ccbac311fea05f86f61904b462b55fb3df8837a366dfc601a0161d0532f20"
 
 [[package]]
 name = "tokio"
-version = "1.51.0"
+version = "1.51.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2bd1c4c0fc4a7ab90fc15ef6daaa3ec3b893f004f915f2392557ed23237820cd"
+checksum = "f66bf9585cda4b724d3e78ab34b73fb2bbaba9011b9bfdf69dc836382ea13b8c"
 dependencies = [
  "bytes",
  "libc",
@@ -3376,6 +3431,7 @@ dependencies = [
 [[package]]
 name = "tower-abci"
 version = "0.19.1"
+source = "git+https://github.com/permissionlessweb/tower-abci?branch=zk-mvp#cf17695282ea2c9ad5c0dd8bc87e1b13787fc84f"
 dependencies = [
  "bytes",
  "futures",
