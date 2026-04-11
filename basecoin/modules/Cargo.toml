@@ -12,8 +12,8 @@ description = "Contains simple implementations of various modules for the Baseco
 # external dependencies
 base64          = { workspace = true }
 cosmrs          = { workspace = true }
-displaydoc      = { workspace = true }
 derive_more     = { workspace = true }
+displaydoc      = { workspace = true }
 primitive-types = { workspace = true, features = [ "serde_no_std" ] }
 prost           = { workspace = true }
 serde           = { workspace = true }
